@@ -1,0 +1,165 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: #fdfdfd;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styling for Sliders and Details */
+.card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Left Panel: Sliders */
+.sliders {
+  width: 55%;
+}
+
+.sliders h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 15px 0 30px;
+  appearance: none;
+  height: 8px;
+  background: #d7d7d7;
+  outline: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2196f3;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  background: #1769aa;
+  box-shadow: 0 6px 18px rgba(33, 150, 243, 0.5);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+  background: #0b508c;
+}
+
+/* Right Panel: Financial Summary */
+.details {
+  width: 40%;
+}
+
+.details h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.details p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  font-weight: 500;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.details p:hover {
+  color: #2196f3;
+}
+
+.details p strong {
+  font-size: 1.4rem;
+  color: #1769aa;
+}
+
+.details .monthly-payment,
+.details .total-interest {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Animation for Financial Summary */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Styling */
+button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #1769aa;
+  transform: translateY(-3px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sliders, .details {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .details h2 {
+    font-size: 1.6rem;
+  }
+
+  .details p strong {
+    font-size: 1.2rem;
+  }
+}
